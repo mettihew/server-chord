@@ -6,7 +6,6 @@ const getStep1 = async (req, res) => {
   res.send(test)
 }
 
-
 const Step1 = async (req, res) => {
   const test = await Page.create(req.body)
   res.send(test)
