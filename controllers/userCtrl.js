@@ -88,7 +88,7 @@ const updateMessage = async (req, res) => {
 
 
 const getMessages = async (req, res) => {
-  const { owner } = req.params
+  const { owner } = req.body
   try {
     const findOwnerMessages = await Message.find({ owner }).populate()
     res.json(findOwnerMessages)
