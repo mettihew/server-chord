@@ -5,8 +5,8 @@ const bcrypt = require('bcrypt')
 // const ObjectId = require('mongodb').ObjectId
 
 const getOne = async (req, res) => {
-  const { name } = req.body
-  const user = await User.findOne({ username: name })
+  const { username } = req.body
+  const user = await User.findOne({ username })
   res.send(user)
 }
 
@@ -82,7 +82,6 @@ const deleteMessage = async (req, res) => {
 const updateMessage = async (req, res) => {
   const { _id, text } = req.body
   const up = await Message.findByIdAndUpdate(_id, {text}, {new: true})
-  console.log(up);
   res.send(up)
 }
 
